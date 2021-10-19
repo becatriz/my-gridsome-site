@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: becatriz/my-gridsome-site.git
+  repo: https://github.com/becatriz/my-gridsome-site
 
 media_folder: "static/uploads"
 public_folder: "/uploads"
