@@ -9,8 +9,8 @@
 </template>
 
 <page-query>
-query Post ($path: String!) {
-  post: post (path: $path) {
+query Post ($id: ID!) {
+  post: post (id: $id) {
     title
     content
     featuredImage
