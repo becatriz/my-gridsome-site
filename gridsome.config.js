@@ -22,6 +22,12 @@ module.exports = {
         typeName: 'Post',
         remark: {}
       }
+    },
+    {
+      use: "gridsome-plugin-netlify-cms",
+      options: {
+        publicPath: "/admin"
+      }
     }
   ]
 }
