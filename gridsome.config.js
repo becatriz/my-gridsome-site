@@ -1,24 +1,27 @@
+// This is where project configuration and plugin options are located.
+// Learn more: https://gridsome.org/docs/config
+
+// Changes here requires a server restart.
+// To restart press CTRL + C in terminal and run `gridsome develop`
+
 module.exports = {
-  siteName: "Cat Blog",
-  plugins: [
-    {
-      use: "@gridsome/source-filesystem",
-      options: {
-        path: "post/**/*.md",
-        typeName: "Posts"
-      }
-    },
-    {
-      use: "gridsome-plugin-netlify-cms",
-      options: {
-        publicPath: "/admin"
-      }
-    }
-  ],
+  siteName: 'Gridsome',
   transformers: {
     remark: {
-      externalLinksTarget: "_blank",
-      externalLinksRel: ["nofollow", "noopener", "noreferrer"]
+      externalLinksTarget: '_blank',
+      externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
+      anchorClassName: 'icon icon-link',
     }
   },
-};
+
+  plugins: [
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        path: 'blog/**/*.md',
+        typeName: 'Post',
+        remark: {}
+      }
+    }
+  ]
+}

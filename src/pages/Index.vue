@@ -11,8 +11,24 @@
       Dolores, aperiam non officia eos quod asperiores
     </p>
 
+    <h2>Manual Blogroll</h2>
+
+    <ul>
+      <li><g-link to="/blog-html/blog-post-one">Blog Post One</g-link></li>
+    </ul>
+
+    <h2>Automatic Blogroll</h2>
+
+    <ul>
+      <li v-for="post in $page.posts.edges" :key="post.id">
+        <g-link :to="post.node.path">
+          {{ post.node.title }}
+        </g-link>
+      </li>
+    </ul>
+
     <p class="home-links">
-      <a href="https://gridsome.org/docs/" target="_blank" rel="noopener"
+      <a href="https://gridsome.org/docs" target="_blank" rel="noopener"
         >Gridsome Docs</a
       >
       <a
@@ -24,6 +40,21 @@
     </p>
   </Layout>
 </template>
+
+<page-query>
+query Posts {
+  posts: allPost {
+    edges {
+      node {
+        id
+        title
+        path
+      }
+    }
+  }
+
+}
+</page-query>
 
 <script>
 export default {

@@ -10,7 +10,7 @@
 
 <page-query>
 query Post ($path: String!) {
-  post: posts (path: $path) {
+  post: post (path: $path) {
     title
     content
     featuredImage
